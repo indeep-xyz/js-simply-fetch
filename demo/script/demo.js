@@ -10,6 +10,7 @@
 
     initFetchButton1();
     initFetchButton2();
+    initErrorableFetchButton();
     initClearButton();
 
     // - - - - - - - - - - - - - - - -
@@ -76,6 +77,36 @@
         console.log("%s loaded", key);
 
         updateTextarea(key, data);
+      }
+    }
+
+    function initErrorableFetchButton () {
+      var fileNames = ['lorem1', 'lorem-non-existent'];
+      addEvent('fetch-errorable', 'click', fetchSamples);
+
+      // - - - - - - - - - - - - - - - -
+      // parivate functions - in initFetchButton2
+
+      function fetchSamples() {
+        var fetcher = new SimplyFetch({
+            prefix: 'sample/',
+            callback: {
+              success: afterSucceeded,
+              error: afterFailed
+            }
+        });
+
+        fetcher.fetch(fileNames);
+      }
+
+      function afterSucceeded(key, data) {
+        console.log("%s loaded", key);
+
+        updateTextarea(key, data);
+      }
+
+      function afterFailed(key) {
+        console.log("%s failed", key);
       }
     }
 
