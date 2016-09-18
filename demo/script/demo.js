@@ -85,7 +85,7 @@
       addEvent('fetch-errorable', 'click', fetchSamples);
 
       // - - - - - - - - - - - - - - - -
-      // parivate functions - in initFetchButton2
+      // parivate functions - in initErrorableFetchButton
 
       function fetchSamples() {
         var fetcher = new SimplyFetch({
