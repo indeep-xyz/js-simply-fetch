@@ -19,7 +19,7 @@ Usage
 
 Fetch files and the callback runs after all files are successfully loaded.
 
-The argument "hash" passed to the callback function is an object which has the key name based on filename of an array passed to loadFile. The result of fetching is kept at the place of each key name.
+The argument "hash" passed to the callback function is an object which has the key name based on filename of an array passed to SimplyFetch#fetch. The result of fetching is kept at the place of each key name.
 
 ```javascript
 var fetcher = new SimplyFetch({
@@ -32,7 +32,7 @@ var fetcher = new SimplyFetch({
   }
 });
 
-fetcher.loadFile(['filename1', 'filename2']);
+fetcher.fetch(['filename1', 'filename2']);
 ```
 
 Then it outputs the following text when the all fetching succeeds.
@@ -49,7 +49,7 @@ Fetch files and the callback runs when per file is successfully loaded.
 The meaning of the arguments to the callback function is the following.
 
 - key
-  - The filename of an array passed to loadFile.
+  - The filename of an array passed to SimplyFetch#fetch.
 - data
   - The result of fetching using each filename.
 
@@ -63,7 +63,7 @@ var fetcher = new SimplyFetch({
   }
 });
 
-fetcher.loadFile(['filename1', 'filename2']);
+fetcher.fetch(['filename1', 'filename2']);
 ```
 
 Then it outputs the following text when the all fetching succeeds. The order of them may change by the loading condition.
@@ -92,7 +92,7 @@ var fetcher = new SimplyFetch({
   }
 });
 
-fetcher.loadFile(['filename1', '__NOT_FOUND__']);
+fetcher.fetch(['filename1', '__NOT_FOUND__']);
 ```
 
 Then it outputs the following text when the all fetching succeeds or fails. The order of them may change by the loading condition.
