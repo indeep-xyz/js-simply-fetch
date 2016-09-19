@@ -15,7 +15,7 @@ Download from the following URL and include your project.
 Usage
 ----
 
-### 1
+### case 1
 
 Fetch files and the callback runs after all files are successfully loaded.
 
@@ -42,7 +42,7 @@ Then it outputs the following text when the all fetching succeeds.
 ...content of filename2...
 ```
 
-### 2
+### case 2
 
 Fetch files and the callback runs when per file is successfully loaded.
 
@@ -73,7 +73,7 @@ Then it outputs the following text when the all fetching succeeds. The order of 
 ...content of filename2...
 ```
 
-### 3
+### case 3
 
 Try fetching files, and then the callbacks run when per file is successfully loaded or per file is failed.
 
